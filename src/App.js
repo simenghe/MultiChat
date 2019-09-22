@@ -1,26 +1,66 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { nav } from 'materialize-css';
+import SingleMessage from './components/singleMessage';
+import NavBar from './components/navBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    exampleMessages: [
+      {
+        msg: "message1",
+        user: "juda"
+      },
+      {
+        msg: "message2",
+        user: "christ"
+      }
+    ]
+  }
+  handleInputs = () => {
+
+  }
+  constructor() {
+    super();
+  }
+  render() {
+    return (
+      <body>
+        <NavBar />
+        <div class="section no-pad-bot" id="index-banner">
+          <div class="container">
+            <div id="chatDiv" />
+            <ul class="collection" id="chatList">
+              <li class="collection-item avatar">
+                <i class="material-icons circle red">play_arrow</i>
+                <span class="title">Title</span>
+                <br />
+                <p>{new Date().toString()}</p>
+                <b>Bold text</b>
+                {/* <p>First Line in a long time</p> */}
+              </li>
+            </ul>
+          </div>
+        </div>
+        {this.state.exampleMessages.map((object, i) => {
+          return <SingleMessage user={object.user} msg={object.msg} />
+        })}
+        <h1 class="header center orange-text" id="siteTitle">not done</h1>
+        <div class="row">
+          <div class="input-field col s12">
+            <input value="rats" id="messageStream" type="text" class="password" />
+          </div>
+        </div>
+        <div class="row center">
+          <h5 class="header col s12 light">Massively Stupid</h5>
+        </div>
+        <div class="row center">
+          <a href="https://github.com/simenghe" id="linkButton" class="btn-large waves-effect waves-light orange">Check
+          out github</a>
+        </div>
+      </body>
+    );
+  }
 }
-
 export default App;
