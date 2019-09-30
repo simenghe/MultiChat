@@ -46,14 +46,13 @@ class App extends React.Component {
         {this.state.exampleMessages.map((object, i) => {
           return <SingleMessage user={object.user} msg={object.msg} />
         })}
-        <h1 class="header center orange-text" id="siteTitle">not done</h1>
+        <h1 class="header center orange-text" id="siteTitle">Multi-Chat!</h1>
         <div class="row">
           <div class="input-field col s12">
-            <input value="rats" id="messageStream" type="text" class="password" />
+            <input value="" id="messageStream" type="text" class="password" />
           </div>
         </div>
         <div class="row center">
-          <h5 class="header col s12 light">Massively Stupid</h5>
         </div>
         <div class="row center">
           <a href="https://github.com/simenghe" id="linkButton" class="btn-large waves-effect waves-light orange">Check

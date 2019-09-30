@@ -1,17 +1,5 @@
 import React from 'react';
 class SingleMessage extends React.Component {
-    state = {
-        exampleMessages: [
-            {
-                msg: "message1",
-                user: "juda"
-            },
-            {
-                msg: "message2",
-                user: "christ"
-            }
-        ]
-    }
     render() {
         return (
             <div class="section no-pad-bot" id="index-banner">
